@@ -1,5 +1,674 @@
-/* Import fonts */
-@import url('../fonts/Roboto.css');
+:root {
+  --accent: #f4583f;
+  --blue: #1ba4c4;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  color: black;
+  background: #fff;
+}
+ 
+a {
+  text-decoration: none;
+}
+ 
+ul {
+  list-style: none;
+}
+ 
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 15px;
+}
+ 
+.container {
+  width: 1000px;
+  margin: auto;
+}
+ 
+section h2 {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 550;
+}
+ 
+.search-block button,
+.popup-submit {
+  border: 1px solid var(--accent);
+  background: #fff;
+  color: var(--accent);
+  transition: .5s all ease-in-out;
+}
+ 
+.header,
+.nav,
+.footer,
+.popup-header,
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.header {
+  padding-top: 38px;
+}
+ 
+.logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  -webkit-text-stroke: 1.5px var(--accent);
+  text-shadow: 2px 2px 0 var(--accent);
+}
+ 
+.search-block {
+  display: flex;
+}
+ 
+.search-block input {
+  width: 220px;
+  height: 42px;
+  padding: 0 8px;
+  border: 1px solid #333;
+}
+ 
+.search-block button {
+  width: 94px;
+  height: 42px;
+  margin-left: 20px;
+  font-weight: 400;
+}
+ 
+.search-block button:hover {
+  color: #fff;
+  background-color: var(--accent);
+}
+ 
+.nav {
+  margin-top: 60px;
+}
+ 
+.footer {
+  margin-top: 40px;
+}
+ 
+.nav,
+.footer {
+  padding-bottom: 40px;
+}
+ 
+.nav ul,
+.footer ul {
+  display: flex;
+}
+ 
+.nav li {
+  margin-right: 40px;
+}
+ 
+.footer li {
+  margin-right: 32px;
+}
+ 
+.nav a,
+.footer a {
+  color: var(--accent);
+  font-size: 24px;
+}
+ 
+.btn-add {
+  display: inline-block;
+  line-height: 52px;
+  text-align: center;
+}
+ 
+.teacher-div {
+  border: 1.5px solid var(--accent);
+  padding: 5px 20px;
+  transition: .5s all ease-in-out;
+}
+ 
+.teacher-div:hover {
+  background-color: var(--accent);
+}
+ 
+.teacher-div:hover .btn-add {
+  color: white;
+}
+ 
+.filters {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  color: #999;
+}
+ 
+.filters label {
+  padding: 0 20px;
+  border-left: 2px dotted #999;
+}
+ 
+.filters label:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+ 
+.filters select {
+  height: 36px;
+  margin-left: 14px;
+  padding: 0 6px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  margin-top: 58px;
+}
+ 
+.card {
+  position: relative;
+  width: 200px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+ 
+.card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+ 
+.card img,
+.teacher-name {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #f99589;
+  border-radius: 50%;
+}
+ 
+.teacher-name {
+  margin: 0 auto;
+  line-height: 142px;
+  color: var(--accent);
+  font-size: 28px;
+  font-weight: bold;
+}
+ 
+.star,
+.info-star {
+  position: absolute;
+  color: yellow;
+  line-height: 1;
+}
+ 
+.star {
+  top: 2px;
+  right: 18px;
+  font-size: 40px;
+}
+ 
+.card h3 {
+  margin-top: 26px;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 30px;
+}
+ 
+.name {
+  margin-top: 12px;
+  color: #999;
+}
+ 
+.country {
+  margin-top: 8px;
+  font-size: 11px;
+}
+ 
+.statistics {
+  margin-top: 30px;
+}
+ 
+.stats-table {
+  width: 100%;
+  margin-top: 44px;
+  border-collapse: collapse;
+}
+ 
+.stats-table th {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #333;
+  font-size: 19px;
+  font-weight: normal;
+}
+ 
+.stats-table th:nth-child(1) { width: 22%; }
+.stats-table th:nth-child(2) { width: 25%; }
+.stats-table th:nth-child(3) { width: 12%; }
+.stats-table th:nth-child(4) { width: 19%; }
+ 
+.stats-table td {
+  height: 36px;
+  text-align: center;
+}
+ 
+.stats-table th:first-child,
+.stats-table td:first-child {
+  padding-left: 20px;
+  text-align: left;
+}
+ 
+.underlined th:hover {
+  border-bottom: 4px solid black;
+  transition: .4s all ease-in-out;
+}
+ 
+.hidden-arrow {
+  color: blue;
+  display: none;
+}
+ 
+.underlined th:hover .hidden-arrow {
+  display: inline-block;
+}
+.pages {
+  margin-top: 30px;
+  padding-left: 20px;
+}
 
-/* Reset and normalize */
-@import url('./normalize.css');
+.pages::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.pages li {
+  float: left;
+  margin-right: 20px;
+}
+.pages a {
+  color: blue;
+}
+ 
+.pages .current {
+  color: black;
+}
+ 
+.favorites {
+  margin-top: 50px;
+}
+ 
+.slider {
+  position: relative;
+}
+ 
+.favorites .cards {
+  margin-top: 40px;
+}
+.favorites .teacher-name + h3 {
+  margin-top: 30px;
+}
+ 
+.favorites .country {
+  margin-top: 16px;
+}
+ 
+.arrow {
+  position: absolute;
+  top: 45px;
+  color: #777;
+  font-size: 50px;
+}
+ 
+.arrow-left {
+  left: -60px;
+}
+ 
+.arrow-right {
+  right: -60px;
+}
+ 
+.about {
+  margin-top: 20px;
+  padding-top: 50px;
+  line-height: 20px;
+  font-weight: normal;
+}
+ 
+.about p {
+  margin-bottom: 16px;
+}
+ 
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+}
+ 
+.popup:target {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+ 
+.popup-window {
+  width: 550px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+ 
+.popup-header {
+  height: 62px;
+  padding: 0 20px;
+  background: #3b3b3b;
+  color: #fff;
+}
+ 
+.popup-header h2 {
+  font-size: 26px;
+  font-weight: normal;
+}
+ 
+.popup-close {
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+}
+ 
+.popup-form {
+  padding: 20px 35px 30px;
+}
+ 
+.field {
+  display: block;
+  margin-bottom: 16px;
+}
+ 
+.field input,
+.field select,
+.field textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 0 8px;
+  border: 1px solid #555;
+  font-size: 14px;
+}
+ 
+.field input,
+.field select {
+  height: 34px;
+}
+ 
+.field textarea {
+  padding: 8px;
+  resize: vertical;
+}
+ 
+.field-date input {
+  width: 50%;
+}
+ 
+.row .field {
+  width: 47%;
+}
+ 
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+ 
+div.inline {
+  color: grey;
+}
+ 
+div.inline span {
+  padding-right: 10px;
+}
+ 
+.inline input[type="color"] {
+  width: 50px;
+  height: 26px;
+}
+ 
+.popup-submit {
+  display: block;
+  width: 100%;
+  height: 62px;
+  margin-top: 30px;
+  font-size: 30px;
+}
+ 
+.popup-info {
+  width: 940px;
+}
+ 
+.info-body {
+  padding: 20px;
+}
+ 
+.info-top {
+  display: flex;
+}
+ 
+.info-photo {
+  width: 320px;
+  height: 320px;
+}
+ 
+.info-text {
+  position: relative;
+  flex: 1;
+  padding-left: 40px;
+}
+ 
+.info-text h3 {
+  margin-top: 4px;
+  font-size: 38px;
+  font-weight: normal;
+}
+ 
+.info-text p {
+  margin-top: 16px;
+}
+ 
+.info-text .info-subject {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+ 
+.info-star {
+  top: 0;
+  right: 0;
+  font-size: 44px;
+}
+ 
+.info-desc {
+  margin-top: 36px;
+  line-height: 20px;
+}
+ 
+.info-email,
+.info-map {
+  color: var(--blue);
+}
+ 
+.info-map {
+  display: inline-block;
+  margin-top: 20px;
+  border-bottom: 1px dashed var(--blue);
+}
+ 
+
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .header,
+  .nav,
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header {
+    padding-top: 20px;
+  }
+
+  .nav {
+    margin-top: 30px;
+  }
+
+  .search-block {
+    width: 100%;
+  }
+
+  .search-block input {
+    flex: 1;
+    width: auto;
+  }
+
+  .nav ul,
+  .footer ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+  }
+
+  .nav li,
+  .footer li {
+    margin-right: 0;
+  }
+
+  .nav a,
+  .footer a {
+    font-size: 20px;
+  }
+
+  section h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .filters label {
+    padding: 0;
+    border-left: none;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .card img,
+  .teacher-name {
+    width: 120px;
+    height: 120px;
+  }
+
+  .teacher-name {
+    line-height: 112px;
+  }
+
+  .star {
+    right: 10px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .stats-table {
+    font-size: 12px;
+  }
+
+  .stats-table th {
+    font-size: 13px;
+  }
+
+  .stats-table th:first-child,
+  .stats-table td:first-child {
+    padding-left: 4px;
+  }
+
+  .popup:target {
+    padding: 10px;
+  }
+
+  .popup-window,
+  .popup-info {
+    width: 100%;
+  }
+
+  .popup-form {
+    padding: 20px;
+  }
+
+  .row,
+  .info-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .row .field,
+  .field-date input {
+    width: 100%;
+  }
+
+  .info-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-text {
+    padding: 20px 0 0;
+  }
+
+  .info-text h3 {
+    font-size: 30px;
+  }
+}
